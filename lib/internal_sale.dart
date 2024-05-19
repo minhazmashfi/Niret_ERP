@@ -6,6 +6,7 @@ import 'package:niret_app/shoelist_tiles.dart';
 import 'package:niret_app/textField_sales.dart';
 
 class InternalState extends StatefulWidget {
+  
   @override
   State<InternalState> createState() {
     return _InternalState();
@@ -13,8 +14,15 @@ class InternalState extends StatefulWidget {
 }
 
 class _InternalState extends State<InternalState> {
+  var totalquan=0;
+  void quantityIncrease(){
+  setState(() {
+    totalquan++;
+  });
+  }
   @override
   Widget build(context) {
+    
     return Scaffold(
         appBar: AppBar(
           title: Text('Internal Sales',
@@ -28,35 +36,50 @@ class _InternalState extends State<InternalState> {
         
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  TextFieldSales('Name'),
-                  const SizedBox(width: 50),
-                  TextFieldSales('ID')
-                ],
-              ),
-              const SizedBox(height: 6,),
+                children: [ Row(
+                  children: [
+                    TextFieldSales('Name'),
+                    const SizedBox(width: 50),
+                    TextFieldSales('ID')
+                  ],
+                ),
+                
+              
+              const SizedBox(height: 6),
               TextFieldSales('Department'),
-            const SizedBox(height: 30),  
+            const SizedBox(height: 30),
+            
+            Row(
+             
+              children:  [
+               SizedBox(width: 4),
+              Expanded(child: Text('Item Name:',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.pink),)),
+            
+              Expanded(child: Text('Price:',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.pink))),
+             
+              Expanded(child: Text('Size:',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.pink))),
+              
+              Expanded(child: Text('Total quantity:$totalquan',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 7, 99, 236))))
+              ],
+            ),  
             SizedBox(
-              height: 360,
+              height: 320,
               child: ListView(children: [
-              ShoeListTiles('MDV 25 '),
-              ShoeListTiles('MDV 26 ') ,
-              ShoeListTiles('Run Shoes') ,
-              ShoeListTiles('Fila 003 ') ,
-              ShoeListTiles('Fila 004 ') ,
-              ShoeListTiles('Easy KID 525 ') ,
-              ShoeListTiles('MH 100 '),
-              ShoeListTiles('MH 200 ')   
+              ShoeListTiles('MDV 25 ','200 BDT',quantityIncrease,totalquan),
+              ShoeListTiles('MDV 26 ','200 BDT',quantityIncrease,totalquan) ,
+              ShoeListTiles('Run Shoes','200 BDT',quantityIncrease,totalquan) ,
+              ShoeListTiles('Fila 003 ','300 BDT',quantityIncrease,totalquan) ,
+              ShoeListTiles('Fila 004 ','500 BDT',quantityIncrease,totalquan) ,
+              ShoeListTiles('Easy KID 525 ','200 BDT',quantityIncrease,totalquan) ,
+              ShoeListTiles('MH 100 ','200 BDT',quantityIncrease,totalquan),
+              ShoeListTiles('MH 200 ','800 BDT',quantityIncrease,totalquan)   
               ],
               
               ),
             ),
           const SizedBox(height:6),
           Padding (
-            padding: EdgeInsets.only(left: 600),
+            padding: const EdgeInsets.only(left: 600),
             child: ElevatedButton(onPressed: (){}, 
             style: ElevatedButton.styleFrom(
                             backgroundColor:
@@ -64,7 +87,7 @@ class _InternalState extends State<InternalState> {
                             foregroundColor: Colors.white,
                             padding: const EdgeInsets.all(20),),
             
-            child: Text('Submit')
+            child:const Text('Submit')
             ),
           )    
             ],
