@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:niret_app/cart_page.dart';
 import 'package:niret_app/shoelist_tiles.dart';
 import 'package:niret_app/textField_sales.dart';
 
@@ -15,10 +16,16 @@ class InternalState extends StatefulWidget {
 
 class _InternalState extends State<InternalState> {
   var totalquan=0;
-  void quantityIncrease(){
+  
+  List<String> addedItemlist=[];
+  void quantityIncrease(String addedItems){
+  addedItemlist.add(addedItems);
+   
   setState(() {
     totalquan++;
+    print(addedItemlist);
   });
+ 
   }
   @override
   Widget build(context) {
@@ -31,7 +38,14 @@ class _InternalState extends State<InternalState> {
                   fontSize: 24,
                   fontWeight: FontWeight.bold)),
           backgroundColor: Color.fromARGB(255, 253, 110, 15),
+          actions: [
+            IconButton(onPressed: (){
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage(),));
+            }, 
+            icon:Image.asset('assets/images/cart.png'))
+          ],
         ),
+        backgroundColor: Color.fromARGB(255, 198, 238, 145),
         body: Container(
         
           child: Column(

@@ -10,6 +10,7 @@ class ShoeListTiles extends StatelessWidget {
   final String price;
   final Function quantityIncrease;
   final int total;
+ 
   
   
   @override
@@ -38,12 +39,14 @@ class ShoeListTiles extends StatelessWidget {
                   
                   
                       Expanded(
+                      
                         child: Text(
                           price,
                           style: GoogleFonts.ubuntuMono(
                               fontSize: 24, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
                         ),
                       ),
+
                      Expanded(
                         child: Text(
                           ' N/A',
@@ -54,9 +57,10 @@ class ShoeListTiles extends StatelessWidget {
                 
                   const Spacer(),
                   ElevatedButton(onPressed: (){
-                  if (total<=5){
-                    print(total);
-                    quantityIncrease();
+                  if (total+1<=5){
+                 
+                  quantityIncrease(labelText);
+                  showDialog(context: context, builder:(context)=> const AlertDialog(content: Text('Successfully added to Cart'),alignment:Alignment.bottomCenter));
                   }
                     
                   }, 
