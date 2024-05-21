@@ -58,8 +58,10 @@ class ShoeListTiles extends StatelessWidget {
                   const Spacer(),
                   ElevatedButton(onPressed: (){
                   if (total+1<=5){
-                 
-                  quantityIncrease(labelText);
+                  List itemsummary=[];
+                  itemsummary.add(labelText);
+                  itemsummary.add(price);
+                  quantityIncrease(itemsummary);
                   showDialog(context: context, builder:(context)=> const AlertDialog(content: Text('Successfully added to Cart'),alignment:Alignment.bottomCenter));
                   }
                     

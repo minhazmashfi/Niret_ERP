@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:niret_app/cart_page.dart';
@@ -16,14 +17,19 @@ class InternalState extends StatefulWidget {
 
 class _InternalState extends State<InternalState> {
   var totalquan=0;
+  List<Map<String,Object>> itemInfo=[];
+
+  void quantityIncrease(List addedItems){
+ 
+    itemInfo.add({
+      'itemName':addedItems[0],
+      'price': addedItems[1]
+    });
   
-  List<String> addedItemlist=[];
-  void quantityIncrease(String addedItems){
-  addedItemlist.add(addedItems);
    
   setState(() {
     totalquan++;
-    print(addedItemlist);
+    print(itemInfo);
   });
  
   }
@@ -40,7 +46,7 @@ class _InternalState extends State<InternalState> {
           backgroundColor: Color.fromARGB(255, 253, 110, 15),
           actions: [
             IconButton(onPressed: (){
-             Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage(),));
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage(itemInfo),));
             }, 
             icon:Image.asset('assets/images/cart.png'))
           ],
