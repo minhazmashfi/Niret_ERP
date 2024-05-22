@@ -83,7 +83,7 @@ class _InternalState extends State<InternalState> {
               ],
             ),  
             SizedBox(
-              height: 320,
+              height: 350,
               child: ListView(children: [
               ShoeListTiles('MDV 25 ','200 BDT',quantityIncrease,totalquan),
               ShoeListTiles('MDV 26 ','200 BDT',quantityIncrease,totalquan) ,
@@ -97,19 +97,8 @@ class _InternalState extends State<InternalState> {
               
               ),
             ),
-          const SizedBox(height:6),
-          Padding (
-            padding: const EdgeInsets.only(left: 600),
-            child: ElevatedButton(onPressed: (){}, 
-            style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                const Color.fromARGB(255, 255, 101, 41),
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.all(20),),
-            
-            child:const Text('Submit')
-            ),
-          )    
+          
+           
             ],
           ),
         ),
