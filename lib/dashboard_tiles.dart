@@ -8,7 +8,7 @@ class DashboardTiles extends StatelessWidget {
   @override
   Widget build(context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 2),
+        padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 2),
         child: Container(
           height: 150,
           decoration: BoxDecoration(

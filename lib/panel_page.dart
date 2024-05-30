@@ -13,28 +13,63 @@ class PanelPage extends StatefulWidget {
 class _PanelPageState extends State<PanelPage> {
   @override
   Widget build(context) {
-    return Scaffold(
-      appBar: AppBar(
-          title: Text(
-            'Dashboard ',
-            style: GoogleFonts.ubuntu(
-                color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+    return DefaultTabController(
+      length: 4,
+      
+      child: Scaffold(
+      
+        appBar: AppBar(
+          elevation: 8,
+          shadowColor: Colors.black,
+          leading: IconButton(onPressed: (){}, icon:const Icon(Icons.menu)),
+          titleSpacing: 20,
+            title: Text(
+              'Dashboard ',
+              style: GoogleFonts.ubuntu(
+                  color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          flexibleSpace: Container(
+            decoration:const BoxDecoration(gradient: LinearGradient(colors: [ Color.fromARGB(255, 255, 147, 7), Color.fromARGB(255, 255, 199, 32)],
+            begin:Alignment.topLeft,
+            end: Alignment.bottomRight)),
           ),
-          backgroundColor: const Color.fromARGB(255, 255, 138, 5)),
-
-    body: Container(
-      child: ListView(children: [
+            
+            bottom:const TabBar(
+              indicatorColor: Colors.black,
+              indicatorWeight: 4,
+              labelStyle: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+              unselectedLabelStyle: TextStyle(color: Color.fromARGB(255, 153, 17, 17),fontWeight: FontWeight.bold),
+              tabs: [
+              Tab(text:'Sales'),
+              Tab(text: 'Purchase'),
+              Tab(text: 'Material Management'),
+              Tab(text: 'Production')
+            ]),
+            ),
       
-        DashboardTiles('Internal Sales'),
-        DashboardTiles('Booking and Sales'),
-        DashboardTiles('Export LC'),
-        DashboardTiles('Export Document'),
-        DashboardTiles('Sales Offer')
-      
-      ],
-      
+      body: TabBarView(
+        children: [
+        Container(
+        child: ListView(children: [
+        
+          DashboardTiles('Internal Sales'),
+          DashboardTiles('Booking and Sales'),
+          DashboardTiles('Export LC'),
+          DashboardTiles('Export Document'),
+          DashboardTiles('Sales Offer')
+        
+        ],
+        
+        ),
       ),
-    ),      
+      Column(),
+      Column(),
+      Column()          
+
+        ],
+      )
+    
+      ),
     );
   }
 }
