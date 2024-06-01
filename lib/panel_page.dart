@@ -34,23 +34,23 @@ class _PanelPageState extends State<PanelPage> {
             end: Alignment.bottomRight)),
           ),
             
-            bottom:const TabBar(
+            bottom: TabBar(
               indicatorColor: Colors.black,
               indicatorWeight: 4,
               labelStyle: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
               unselectedLabelStyle: TextStyle(color: Color.fromARGB(255, 153, 17, 17),fontWeight: FontWeight.bold),
               tabs: [
-              Tab(text:'Sales'),
-              Tab(text: 'Purchase'),
-              Tab(text: 'Material Management'),
-              Tab(text: 'Production')
+              Tab(text:'Sales',icon: Image.asset('assets/icons/sales_bw.png',height: 30,width: 30)),
+              Tab(text: 'Purchase',icon: Image.asset('assets/icons/purchase.png',height: 30,width: 30)),
+              Tab(text: 'Material Management',icon: Image.asset('assets/icons/material_management.png',height: 30,width: 30)),
+              Tab(text: 'Production',icon: Image.asset('assets/icons/production.png',height: 30,width: 30))
             ]),
             ),
       
       body: TabBarView(
         children: [
         Container(
-        child: ListView(children: [
+        child: GridView.count(crossAxisCount: 4,children: [
         
           DashboardTiles('Internal Sales'),
           DashboardTiles('Booking and Sales'),
