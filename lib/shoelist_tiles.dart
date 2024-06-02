@@ -19,7 +19,7 @@ class ShoeListTiles extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 2),
         child: Container(
-          height: 40,
+          height: 60,
           decoration:
           BoxDecoration(
               color: Color.fromARGB(255, 11, 253, 132),
@@ -35,7 +35,7 @@ class ShoeListTiles extends StatelessWidget {
                         child: Text(
                           labelText,
                           style: GoogleFonts.ubuntuMono(
-                              fontSize: 24, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
+                              fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
                         ),
                       ),
                       
@@ -45,7 +45,7 @@ class ShoeListTiles extends StatelessWidget {
                             child: Text(
                               price,
                               style: GoogleFonts.ubuntuMono(
-                                  fontSize: 24, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
+                                  fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
                             ),
                           ),
                     
@@ -53,7 +53,7 @@ class ShoeListTiles extends StatelessWidget {
                             child: Text(
                               ' N/A',
                               style: GoogleFonts.ubuntuMono(
-                                  fontSize: 24, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
+                                  fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
                             ),
                           ),
                     

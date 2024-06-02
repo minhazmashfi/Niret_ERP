@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:niret_app/dashboard_tiles.dart';
+import 'package:niret_app/sidebar.dart';
 
 class PanelPage extends StatefulWidget {
   @override
@@ -17,11 +18,11 @@ class _PanelPageState extends State<PanelPage> {
       length: 4,
       
       child: Scaffold(
-      
+        drawer: Sidebar(),
         appBar: AppBar(
           elevation: 8,
           shadowColor: Colors.black,
-          leading: IconButton(onPressed: (){}, icon:const Icon(Icons.menu)),
+
           titleSpacing: 20,
             title: Text(
               'Dashboard ',
@@ -50,7 +51,7 @@ class _PanelPageState extends State<PanelPage> {
       body: TabBarView(
         children: [
         Container(
-        child: GridView.count(crossAxisCount: 4,children: [
+        child: GridView.count(crossAxisCount: 2,children: [
         
           DashboardTiles('Internal Sales'),
           DashboardTiles('Booking and Sales'),
