@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:niret_app/login_screen.dart';
 
 class Sidebar extends StatelessWidget{
   Sidebar({super.key});
@@ -22,14 +23,17 @@ class Sidebar extends StatelessWidget{
           ) 
           ),
         ListTile(
-            title: Text('Account Information'),
+            title: const Text('Account Information'),
             leading: Icon(Icons.account_box_rounded),
             onTap: (){},
+            
           ),
           ListTile(
             title: Text('Sign Out'),
             leading: Icon(Icons.logout_rounded),
-            onTap: (){},
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
+            },
           )
           
         ],
