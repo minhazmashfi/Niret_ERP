@@ -50,8 +50,9 @@ class _InternalState extends State<InternalState> {
         ],
       ),
       backgroundColor: Color.fromARGB(255, 223, 253, 183),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
+          
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFieldSales('Name'),
@@ -92,7 +93,7 @@ class _InternalState extends State<InternalState> {
               ],
             ),
             SizedBox(
-              height: 420,
+              height: 400,
               child: ListView(
                 children: [
                   ShoeListTiles(
