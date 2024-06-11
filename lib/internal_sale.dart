@@ -46,7 +46,7 @@ class _InternalState extends State<InternalState> {
                       builder: (context) => CartPage(itemInfo),
                     ));
               },
-              icon: const Icon(Icons.shopping_cart_sharp,color: Colors.white))
+              icon:  Image.asset('assets/images/cart.png'))
         ],
       ),
       backgroundColor: Color.fromARGB(255, 223, 253, 183),

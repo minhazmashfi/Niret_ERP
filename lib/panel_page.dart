@@ -35,6 +35,7 @@ class _PanelPageState extends State<PanelPage> {
           ,alignment: Alignment.center));
         },
         child: Scaffold(
+          backgroundColor: Color.fromARGB(255, 236, 240, 164),
           drawer: Sidebar(),
           appBar: AppBar(
             elevation: 8,
@@ -67,20 +68,33 @@ class _PanelPageState extends State<PanelPage> {
         
         body: TabBarView(
           children: [
-          Container(
-          child: GridView.count(crossAxisCount: 2,children: [
+           GridView.count(crossAxisCount: 4,childAspectRatio:(8/5) ,
           
-            DashboardTiles('Internal Sales'),
-            DashboardTiles('Booking and Sales'),
-            DashboardTiles('Export LC'),
-            DashboardTiles('Export Document'),
-            DashboardTiles('Sales Offer')
+          children: [
+          
+            DashboardTiles('Internal Sales','assets/images/sale64.png'),
+            DashboardTiles('Booking and Sales','assets/images/order.png'),
+            DashboardTiles('Export LC','assets/images/exportlc.png'),
+            DashboardTiles('Export Document','assets/images/exportdc.png'),
+            DashboardTiles('Sales Offer','assets/images/saleoffer.png')
           
           ],
           
           ),
-        ),
-        Column(),
+        
+         GridView.count(crossAxisCount: 4,childAspectRatio:(8/5) ,
+          
+          children: [
+          
+            DashboardTiles('Purchase Requisition','assets/images/purchasereq.png'),
+            DashboardTiles('Purchase Order','assets/images/po.png'),
+            DashboardTiles('Import LC','assets/images/importlc.png'),
+            DashboardTiles('Proforma Invoice','assets/images/pi.png'),
+            DashboardTiles('Supplier Payment','assets/images/bill.png')
+          
+          ],
+          
+          ),
         Column(),
         Column()          
         

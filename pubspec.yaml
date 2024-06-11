@@ -79,6 +79,20 @@ flutter:
    - assets/icons/material_management.png
    - assets/images/avatar.png
    - assets/images/niret_launcher.jpg
+   - assets/icons/sale-32.png
+   - assets/icons/sale-64.png
+   - assets/images/sale64.png
+   - assets/images/cart.png
+   - assets/images/exportdc.png
+   - assets/images/order.png
+   - assets/images/exportlc.png
+   - assets/images/importlc.png
+   - assets/images/pi.png
+   - assets/images/po.png
+   - assets/images/purchasereq.png
+   - assets/images/saleoffer.png
+   - assets/images/bill.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -3,36 +3,37 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:niret_app/internal_sale.dart';
 
 class DashboardTiles extends StatelessWidget {
-  DashboardTiles(this.labelText, {super.key});
+  DashboardTiles(this.labelText, this.iconString,{super.key});
   final String labelText;
+  final String iconString;
   @override
   Widget build(context) {
-    return Padding(
-        padding: const EdgeInsets.symmetric( vertical:2,horizontal: 2),
-        child: Container(
-          height: 50,
+    return 
+    Card(
+        margin: EdgeInsets.all(5),
+        color: Color.fromARGB(255, 243, 233, 97),
+        elevation: 10.0,
+        
+        shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(20)) ),
+        child:InkWell(
+          focusColor:Color.fromARGB(255, 243, 201, 51) ,
           
-          decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 7, 185, 255),
-              border: Border.all(color: const Color.fromARGB(255, 1, 61, 4), width: 2.5)),
-          alignment: Alignment.bottomLeft,
-          child: Padding(padding:const EdgeInsets.only(top: 50) ,
-            child: Column(
-              children: [
-               TextButton(onPressed: (){
-                if (labelText=='Internal Sales'){
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => InternalState(),));
-                }
-              }, child:Text(labelText,style: const TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),)
-              
-                  
-                ),
-              const SizedBox(height: 20),  
-              
-              ],
-            ),
-          ),
+          onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>InternalState()));
+      },
+          child:  Column(mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+           crossAxisAlignment: CrossAxisAlignment.center,
+           children: [
+            Image.asset(iconString,height:70,width:70),
+            Text(labelText,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black),)
+           
+           ]
+           ),
         ),
-        );
+          shadowColor: Colors.black,
+      );
+      
+      
+  
   }
 }
