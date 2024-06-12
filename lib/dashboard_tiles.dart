@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:niret_app/internal_sale.dart';
@@ -25,7 +27,7 @@ class DashboardTiles extends StatelessWidget {
            crossAxisAlignment: CrossAxisAlignment.center,
            children: [
             Image.asset(iconString,height:70,width:70),
-            Text(labelText,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black),)
+            Text(labelText,style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.black,),textAlign: TextAlign.center,)
            
            ]
            ),

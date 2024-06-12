@@ -35,7 +35,7 @@ class _PanelPageState extends State<PanelPage> {
           ,alignment: Alignment.center));
         },
         child: Scaffold(
-          backgroundColor: Color.fromARGB(255, 236, 240, 164),
+          backgroundColor: Color.fromARGB(255, 239, 241, 193),
           drawer: Sidebar(),
           appBar: AppBar(
             elevation: 8,
@@ -68,7 +68,7 @@ class _PanelPageState extends State<PanelPage> {
         
         body: TabBarView(
           children: [
-           GridView.count(crossAxisCount: 4,childAspectRatio:(8/5) ,
+           GridView.count(crossAxisCount: 3,childAspectRatio:(65/65) ,
           
           children: [
           
@@ -82,7 +82,7 @@ class _PanelPageState extends State<PanelPage> {
           
           ),
         
-         GridView.count(crossAxisCount: 4,childAspectRatio:(8/5) ,
+         GridView.count(crossAxisCount: 3,childAspectRatio:(65/65) ,
           
           children: [
           
@@ -95,7 +95,20 @@ class _PanelPageState extends State<PanelPage> {
           ],
           
           ),
-        Column(),
+         GridView.count(crossAxisCount: 3,childAspectRatio:(65/65) ,
+          
+          children: [
+          
+            DashboardTiles('Internal Requistion(SRR)','assets/images/SRR.png'),
+            DashboardTiles('Transfer','assets/images/transfer.png'),
+            DashboardTiles('Goods Recieve (GRR)','assets/images/grr.png'),
+            DashboardTiles('Delivery Order','assets/images/delivery.png'),
+            DashboardTiles('Delivery Chalan','assets/images/Dc.png'),
+            
+          
+          ],
+          
+          ),
         Column()          
         
           ],

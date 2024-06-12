@@ -92,6 +92,12 @@ flutter:
    - assets/images/purchasereq.png
    - assets/images/saleoffer.png
    - assets/images/bill.png
+   - assets/images/delivery.png
+   - assets/images/grr.png
+   - assets/images/SRR.png
+   - assets/images/transfer.png
+   - assets/images/Dc.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
