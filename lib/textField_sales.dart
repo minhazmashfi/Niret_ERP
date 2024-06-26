@@ -6,9 +6,10 @@ class TextFieldSales extends StatelessWidget{
   final String label;
  Widget build(context){
   return Container(
-    decoration: BoxDecoration(  color: Color.fromARGB(255, 157, 226, 253),
-              border: Border.all(color: Color.fromARGB(255, 1, 61, 4), width: 3)),
+    decoration: BoxDecoration(  color: Color.fromARGB(255, 248,237,184),
+              ),
     child:SizedBox(
+      height:40 ,
       width:600 ,
       child: TextFormField(
                           keyboardType: TextInputType.name,
@@ -17,7 +18,7 @@ class TextFieldSales extends StatelessWidget{
                           decoration: InputDecoration(
                             labelStyle: GoogleFonts.acme(
                                 color: Color.fromARGB(255, 0, 0, 0),
-                                fontSize: 18),
+                                fontSize: 16),
                             labelText: label,
                             hintText: 'Enter $label',
                             border: OutlineInputBorder(),

@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:niret_app/cart_page.dart';
 import 'package:niret_app/shoelist_tiles.dart';
 import 'package:niret_app/textField_sales.dart';
+import 'package:niret_app/sidebar.dart';
 
 class InternalState extends StatefulWidget {
   @override
@@ -30,6 +31,7 @@ class _InternalState extends State<InternalState> {
   @override
   Widget build(context) {
     return Scaffold(
+      drawer: Sidebar(),
       appBar: AppBar(
         title: Text('Internal Sales',
             style: GoogleFonts.ubuntu(
@@ -49,18 +51,18 @@ class _InternalState extends State<InternalState> {
               icon:  Image.asset('assets/images/cart.png'))
         ],
       ),
-      backgroundColor: Color.fromARGB(255, 223, 253, 183),
+      backgroundColor: Color.fromARGB(255, 254, 255, 253),
       body: SingleChildScrollView(
         child: Column(
           
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 4,),
             TextFieldSales('Name'),
-            const SizedBox(height: 8),
+            const SizedBox(height: 4),
             TextFieldSales('ID'),
-            const SizedBox(height: 8),
-            TextFieldSales('Department'),
-            const SizedBox(height: 30),
+            const SizedBox(height: 150),
+            
             Row(
               children: [
               const  SizedBox(width: 4),
@@ -68,32 +70,32 @@ class _InternalState extends State<InternalState> {
                     child:  Text(
                   'Item Name:',
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: Colors.pink),
                 )),
               const  Expanded(
                     child: Text('Price:',
                         style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: Colors.pink))),
               const  Expanded(
                     child: Text('Size:',
                         style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: Colors.pink))),
                 Expanded(
                     child: Text('Total quantity:$totalquan',
                         style: const TextStyle(
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: Color.fromARGB(255, 7, 99, 236))))
               ],
             ),
             SizedBox(
-              height: 400,
+              height: 450,
               child: ListView(
                 children: [
                   ShoeListTiles(

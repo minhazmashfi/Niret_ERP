@@ -76,7 +76,8 @@ class _PanelPageState extends State<PanelPage> {
             DashboardTiles('Booking and Sales','assets/images/order.png'),
             DashboardTiles('Export LC','assets/images/exportlc.png'),
             DashboardTiles('Export Document','assets/images/exportdc.png'),
-            DashboardTiles('Sales Offer','assets/images/saleoffer.png')
+            DashboardTiles('Sales Offer','assets/images/saleoffer.png'),
+            DashboardTiles('Gift Approval','assets/images/gift.png')
           
           ],
           

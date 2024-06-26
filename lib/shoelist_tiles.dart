@@ -17,13 +17,13 @@ class ShoeListTiles extends StatelessWidget {
   Widget build(context) {
     
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 2),
+        padding: const EdgeInsets.symmetric(vertical: 0.5, horizontal: 2),
         child: Container(
-          height: 60,
+          height: 50,
           decoration:
           BoxDecoration(
-              color: Color.fromARGB(255, 89, 231, 160),
-              border: Border.all(color: Color.fromARGB(255, 1, 61, 4), width: 2.5)),
+              color: Color.fromARGB(255, 243, 232, 176)
+              ),
           alignment: Alignment.centerLeft,
           child: Padding(padding:const EdgeInsets.only(left: 4) ,
             child:
@@ -35,7 +35,7 @@ class ShoeListTiles extends StatelessWidget {
                         child: Text(
                           labelText,
                           style: GoogleFonts.ubuntuMono(
-                              fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
+                              fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
                         ),
                       ),
                       
@@ -45,7 +45,7 @@ class ShoeListTiles extends StatelessWidget {
                             child: Text(
                               price,
                               style: GoogleFonts.ubuntuMono(
-                                  fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
+                                  fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
                             ),
                           ),
                     
@@ -53,7 +53,7 @@ class ShoeListTiles extends StatelessWidget {
                             child: Text(
                               ' N/A',
                               style: GoogleFonts.ubuntuMono(
-                                  fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
+                                  fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
                             ),
                           ),
                     
@@ -69,10 +69,10 @@ class ShoeListTiles extends StatelessWidget {
                         
                       }, 
                       
-                      style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 1, 66, 3),foregroundColor: Colors.white
+                      style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255,81,160,94),foregroundColor: Colors.white,shape: RoundedRectangleBorder(),fixedSize: Size(70, 50)
                       ),
                       
-                      child: const Text('Add',style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),))
+                      child: const Text('Add',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),))
                       ]
                     ),
               
