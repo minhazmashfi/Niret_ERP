@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:niret_app/cart_page.dart';
 import 'package:niret_app/shoelist_tiles.dart';
+import 'package:niret_app/sidebar_IS.dart';
 import 'package:niret_app/textField_sales.dart';
 import 'package:niret_app/sidebar.dart';
 
@@ -31,7 +32,7 @@ class _InternalState extends State<InternalState> {
   @override
   Widget build(context) {
     return Scaffold(
-      drawer: Sidebar(),
+      drawer: SideBar_IS(itemInfo),
       appBar: AppBar(
         title: Text('Internal Sales',
             style: GoogleFonts.ubuntu(

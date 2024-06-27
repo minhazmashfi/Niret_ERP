@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CartPage extends StatefulWidget {
   CartPage(this.itemInfo, {super.key});
-  List<Map<String, Object>> itemInfo;
+  final List<Map<String, Object>> itemInfo;
   @override
   State<CartPage> createState() {
     return _CartPage();
