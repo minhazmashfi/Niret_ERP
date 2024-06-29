@@ -5,11 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:niret_app/internal_sale.dart';
 
 class ShoeListTiles extends StatelessWidget {
-  ShoeListTiles (this.labelText,this.price,this.quantityIncrease,this.total, {super.key});
+  ShoeListTiles (this.labelText,this.price,this.quantityIncrease,this.total,this.totalpricecal, {super.key});
   final String labelText;
-  final String price;
+  final int price;
   final Function quantityIncrease;
   final int total;
+  final Function totalpricecal;
  
   
   
@@ -43,7 +44,7 @@ class ShoeListTiles extends StatelessWidget {
                           Expanded(
                           
                             child: Text(
-                              price,
+                              price.toString(),
                               style: GoogleFonts.ubuntuMono(
                                   fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
                             ),
@@ -59,7 +60,7 @@ class ShoeListTiles extends StatelessWidget {
                     
                       const Spacer(),
                       ElevatedButton(onPressed: (){
-                      
+                      totalpricecal(price);
                       List itemsummary=[];
                       itemsummary.add(labelText);
                       itemsummary.add(price);

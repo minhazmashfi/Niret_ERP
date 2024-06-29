@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:niret_app/cart_page.dart';
 
 class SideBar_IS extends StatelessWidget{
-  SideBar_IS(this.itemInfo,{super.key});
+  SideBar_IS(this.itemInfo,this.total,{super.key});
+  int total;
 final List<Map<String,Object>> itemInfo;  
 @override  
 Widget build(context){
@@ -21,7 +22,7 @@ Widget build(context){
         trailing: Icon(Icons.shopping_cart_sharp,color: Colors.white,),
         
         onTap: (){
-         Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage(itemInfo)));
+         Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage(itemInfo,total)));
         },
 
        ),

@@ -1,0 +1,45 @@
+// Row(children: [
+//                               Expanded(
+//                                 child: Text(
+//                                   info['itemName'].toString(),
+//                                   style: GoogleFonts.ubuntuMono(
+//                                       fontSize: 16,
+//                                       fontWeight: FontWeight.bold,
+//                                       color: Color.fromARGB(255, 7, 1, 61)),
+//                                 ),
+//                               ),
+//                               Expanded(
+//                                 child: Text(
+//                                   'N/A',
+//                                   style: GoogleFonts.ubuntuMono(
+//                                       fontSize: 16,
+//                                       fontWeight: FontWeight.bold,
+//                                       color: Color.fromARGB(255, 7, 1, 61)),
+//                                 ),
+//                               ),
+//                               Expanded(
+//                                 child: Text(
+//                                   info['price'].toString(),
+//                                   style: GoogleFonts.ubuntuMono(
+//                                       fontSize: 16,
+//                                       fontWeight: FontWeight.bold,
+//                                       color: Color.fromARGB(255, 7, 1, 61)),
+//                                 ),
+//                               ),
+//                               const Spacer(),
+//                               ElevatedButton(
+//                                   onPressed: () {
+//                                     widget.itemInfo.remove(info);
+//                                     print(widget.itemInfo);
+//                                     setState(() {});
+//                                   },
+//                                   style: ElevatedButton.styleFrom(
+//                                       backgroundColor:
+//                                           Color.fromARGB(255, 238, 1, 1),
+//                                       foregroundColor: Colors.white),
+//                                   child: const Text(
+//                                     'Remove',
+//                                     style: TextStyle(
+//                                         fontSize: 14, fontWeight: FontWeight.bold),
+//                                   ))
+//                             ])

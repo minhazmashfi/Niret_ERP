@@ -17,6 +17,7 @@ class InternalState extends StatefulWidget {
 }
 
 class _InternalState extends State<InternalState> {
+  var totalprice=0;
   var totalquan = 0;
   List<Map<String, Object>> itemInfo = [];
 
@@ -28,11 +29,14 @@ class _InternalState extends State<InternalState> {
       print(itemInfo);
     });
   }
+  void totalpricecal(int price){
+    totalprice=totalprice+price;
+  }
 
   @override
   Widget build(context) {
     return Scaffold(
-      drawer: SideBar_IS(itemInfo),
+      drawer: SideBar_IS(itemInfo,totalprice),
       appBar: AppBar(
         title: Text('Internal Sales',
             style: GoogleFonts.ubuntu(
@@ -46,7 +50,7 @@ class _InternalState extends State<InternalState> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CartPage(itemInfo),
+                      builder: (context) => CartPage(itemInfo,totalprice),
                     ));
               },
               icon:  Image.asset('assets/images/cart.png'))
@@ -100,21 +104,21 @@ class _InternalState extends State<InternalState> {
               child: ListView(
                 children: [
                   ShoeListTiles(
-                      'MDV 25 ', '200 BDT', quantityIncrease, totalquan),
+                      'MDV 25 ', 200, quantityIncrease, totalquan,totalpricecal),
                   ShoeListTiles(
-                      'MDV 26 ', '200 BDT', quantityIncrease, totalquan),
+                      'MDV 26 ', 200, quantityIncrease, totalquan,totalpricecal),
                   ShoeListTiles(
-                      'Run Shoes', '200 BDT', quantityIncrease, totalquan),
+                      'Run Shoes', 200, quantityIncrease, totalquan,totalpricecal),
                   ShoeListTiles(
-                      'Fila 003 ', '300 BDT', quantityIncrease, totalquan),
+                      'Fila 003 ', 300, quantityIncrease, totalquan,totalpricecal),
                   ShoeListTiles(
-                      'Fila 004 ', '500 BDT', quantityIncrease, totalquan),
+                      'Fila 004 ', 500, quantityIncrease, totalquan,totalpricecal),
                   ShoeListTiles(
-                      'Easy KID 525 ', '200 BDT', quantityIncrease, totalquan),
+                      'Easy KID 525 ', 200, quantityIncrease, totalquan,totalpricecal),
                   ShoeListTiles(
-                      'MH 100 ', '200 BDT', quantityIncrease, totalquan),
+                      'MH 100 ', 200, quantityIncrease, totalquan,totalpricecal),
                   ShoeListTiles(
-                      'MH 200 ', '800 BDT', quantityIncrease, totalquan)
+                      'MH 200 ', 800, quantityIncrease, totalquan,totalpricecal)
                 ],
               ),
             ),
