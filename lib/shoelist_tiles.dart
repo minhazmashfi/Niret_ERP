@@ -60,7 +60,7 @@ class ShoeListTiles extends StatelessWidget {
                     
                       const Spacer(),
                       ElevatedButton(onPressed: (){
-                      totalpricecal(price);
+                      totalpricecal(price,'add');
                       List itemsummary=[];
                       itemsummary.add(labelText);
                       itemsummary.add(price);

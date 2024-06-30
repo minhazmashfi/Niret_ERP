@@ -6,9 +6,10 @@ import 'package:dotted_line/dotted_line.dart';
 
 
 class CartPage extends StatefulWidget {
-  CartPage(this.itemInfo,this.total, {super.key});
+  CartPage(this.itemInfo,this.total, this.totalpricecal,{super.key});
   final List<Map<String, Object>> itemInfo;
-  int total;
+  final Function totalpricecal;
+  var total;
   @override
   State<CartPage> createState() {
     return _CartPage();
@@ -89,9 +90,14 @@ class _CartPage extends State<CartPage> {
                                       child: ElevatedButton(
                                           
                                           onPressed: () {
+                                            
+                                            widget.totalpricecal(info['price'],'substract');
+                                            widget.total= widget.total-info['price'];
                                             widget.itemInfo.remove(info);
                                             print(widget.itemInfo);
-                                            setState(() {});
+                                            setState(() {
+                                              
+                                            });
                                           },
                                           style: ElevatedButton.styleFrom(
                                             padding: EdgeInsets.all(2),
@@ -116,7 +122,14 @@ class _CartPage extends State<CartPage> {
           const SizedBox(height: 5,),
           DottedLine(direction: Axis.horizontal,lineLength: double.infinity,),    
           const SizedBox(height: 6,),
-          Text('Total= '+widget.total.toString()+' BDT')  
+          Center(
+            
+            child: Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: [Text('Total= ',style: GoogleFonts.bebasNeue(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),
+            Text(widget.total.toString(),style: GoogleFonts.bebasNeue(color: const Color.fromARGB(255, 228, 16, 16),fontSize: 14,fontWeight: FontWeight.bold),),
+            Text(' BDT',style: TextStyle(color: Color.fromARGB(255, 8, 8, 8),fontSize: 14),)
+            ],),
+          )  
             ],
 
           )

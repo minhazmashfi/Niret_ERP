@@ -29,14 +29,20 @@ class _InternalState extends State<InternalState> {
       print(itemInfo);
     });
   }
-  void totalpricecal(int price){
+  void totalpricecal(int price,String action){
+    if (action=='add'){
     totalprice=totalprice+price;
+    }
+    else{
+      totalprice=totalprice-price;
+      print(totalprice);
+    }
   }
 
   @override
   Widget build(context) {
     return Scaffold(
-      drawer: SideBar_IS(itemInfo,totalprice),
+      drawer: SideBar_IS(itemInfo,totalprice,totalpricecal),
       appBar: AppBar(
         title: Text('Internal Sales',
             style: GoogleFonts.ubuntu(
@@ -50,7 +56,7 @@ class _InternalState extends State<InternalState> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CartPage(itemInfo,totalprice),
+                      builder: (context) => CartPage(itemInfo,totalprice,totalpricecal),
                     ));
               },
               icon:  Image.asset('assets/images/cart.png'))

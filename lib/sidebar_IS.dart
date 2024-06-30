@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:niret_app/approval_IS.dart';
 import 'package:niret_app/cart_page.dart';
 
 class SideBar_IS extends StatelessWidget{
-  SideBar_IS(this.itemInfo,this.total,{super.key});
+  SideBar_IS(this.itemInfo,this.total,this.totalpricecal,{super.key});
   int total;
+  final Function totalpricecal;
 final List<Map<String,Object>> itemInfo;  
 @override  
 Widget build(context){
@@ -22,7 +24,7 @@ Widget build(context){
         trailing: Icon(Icons.shopping_cart_sharp,color: Colors.white,),
         
         onTap: (){
-         Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage(itemInfo,total)));
+         Navigator.push(context, MaterialPageRoute(builder: (context)=>CartPage(itemInfo,total,totalpricecal)));
         },
 
        ),
@@ -41,7 +43,14 @@ Widget build(context){
           
         },
 
-       )
+       ),
+        ListTile(
+        title: Text('Approval',style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.bold),),
+        trailing: Icon(Icons.approval,color: Colors.white),
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> Approval_IS()));
+        },
+        ),
       ],
     )
 
