@@ -2,6 +2,7 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:niret_app/approval_details.dart';
 
 class Approval_IS extends StatefulWidget{
   Approval_IS({super.key});
@@ -37,14 +38,19 @@ class Approval_IS_State extends State<Approval_IS>{
           shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(40) ),
           margin: EdgeInsets.all(4),
           
-          child:Row(
-            children: [
-              const SizedBox(width:4,),
-              Text('Md Irfan Ahmed',style: GoogleFonts.roboto(fontSize:14, color:Color.fromARGB(255, 38, 24, 121),fontWeight:FontWeight.bold),),
-              const Spacer(),
-              Text('ABC12300',style: GoogleFonts.roboto(fontSize:14, color:Color.fromARGB(255, 38, 24, 121),fontWeight:FontWeight.bold),),
-              const SizedBox(width:4,)
-            ],
+          child:InkWell(
+            child: Row(
+              children: [
+                const SizedBox(width:4,),
+                Text('Md Irfan Ahmed',style: GoogleFonts.roboto(fontSize:14, color:Color.fromARGB(255, 38, 24, 121),fontWeight:FontWeight.bold),),
+                const Spacer(),
+                Text('ABC12300',style: GoogleFonts.roboto(fontSize:14, color:Color.fromARGB(255, 38, 24, 121),fontWeight:FontWeight.bold),),
+                const SizedBox(width:4,)
+              ],
+            ),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder:(context)=>Approval_Details()));
+            },
           )
          ),
        ),
