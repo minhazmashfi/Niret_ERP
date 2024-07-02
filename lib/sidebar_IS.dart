@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:niret_app/approval_IS.dart';
 import 'package:niret_app/cart_page.dart';
+import 'package:niret_app/order_status.dart';
 
 class SideBar_IS extends StatelessWidget{
   SideBar_IS(this.itemInfo,this.total,this.totalpricecal,{super.key});
@@ -40,7 +41,7 @@ Widget build(context){
         title: Text('Order Status',style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.bold),),
         trailing: Icon(Icons.task_sharp,color: Colors.white),
         onTap: (){
-          
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderStatus()));
         },
 
        ),
