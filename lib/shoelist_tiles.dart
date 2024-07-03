@@ -70,6 +70,8 @@ class ShoeListTiles extends StatelessWidget {
                         
                       }, 
                       
+                      
+                      
                       style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255,81,160,94),foregroundColor: Colors.white,shape: RoundedRectangleBorder(),fixedSize: Size(70, 50)
                       ),
                       

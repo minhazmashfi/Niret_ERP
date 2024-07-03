@@ -80,8 +80,13 @@ class LoginScreenState extends State<LoginScreen> {
                       ),
                       const SizedBox(height: 20),
                       ElevatedButton(
-                          onPressed: () {
+                          onPressed: () async {
+                            showDialog(context: context, builder: (context)=>
+                            Center(child: CircularProgressIndicator(backgroundColor:Colors.amber)));
+                            await Future.delayed(Duration(seconds: 2));
+                             
                             if (username.isNotEmpty && password.isNotEmpty) {
+                              
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
