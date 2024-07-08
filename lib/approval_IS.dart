@@ -124,7 +124,7 @@ class Approval_IS_State extends State<Approval_IS>{
            child: Container(
             height:50 ,
              child: Card(
-              color: Color.fromARGB(255, 43, 187, 63),
+              color: Color.fromARGB(255, 85, 216, 103),
               elevation: 3 ,
               shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(40) ),
               margin: EdgeInsets.all(4),
@@ -151,7 +151,7 @@ class Approval_IS_State extends State<Approval_IS>{
            child: Container(
             height:50 ,
              child: Card(
-              color: Color.fromARGB(255, 43, 187, 63),
+              color: Color.fromARGB(255, 85, 216, 103),
               elevation: 3 ,
               shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(40) ),
               margin: EdgeInsets.all(4),
@@ -173,7 +173,7 @@ class Approval_IS_State extends State<Approval_IS>{
            child: Container(
             height:50 ,
              child: Card(
-              color: Color.fromARGB(255, 43, 187, 63),
+              color: Color.fromARGB(255, 85, 216, 103),
               elevation: 3 ,
               shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(40) ),
               margin: EdgeInsets.all(4),

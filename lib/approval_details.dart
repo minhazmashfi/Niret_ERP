@@ -165,8 +165,8 @@ class Approval_Details extends StatelessWidget {
                   ),
                   DottedLine(lineLength: double.infinity),
                   const SizedBox(height: 5,),
-                   Row(mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('Total= ',style: GoogleFonts.bebasNeue(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),
+                  Row(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [Text('Total= ',style: GoogleFonts.bebasNeue(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),
             Text('800',style: GoogleFonts.bebasNeue(color: const Color.fromARGB(255, 228, 16, 16),fontSize: 14,fontWeight: FontWeight.bold),),
             Text(' BDT',style: TextStyle(color: Color.fromARGB(255, 8, 8, 8),fontSize: 14),)
             ],),
@@ -186,7 +186,7 @@ class Approval_Details extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.amber,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10))))
+                  borderRadius: BorderRadius.circular(10))))
         ],
       ),
     );

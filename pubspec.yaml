@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.6
   google_fonts: ^6.2.1
   dotted_line: ^3.2.2
+  assorted_layout_widgets: ^9.0.2
 
 
 
@@ -99,6 +100,8 @@ flutter:
    - assets/images/transfer.png
    - assets/images/Dc.png
    - assets/images/gift.png
+   - assets/images/green_line.png
+   - assets/images/red_line.png
 
 
 

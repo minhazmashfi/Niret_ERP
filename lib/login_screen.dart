@@ -83,7 +83,7 @@ class LoginScreenState extends State<LoginScreen> {
                           onPressed: () async {
                             showDialog(context: context, builder: (context)=>
                             Center(child: CircularProgressIndicator(backgroundColor:Colors.amber)));
-                            await Future.delayed(Duration(seconds: 2));
+                            await Future.delayed(Duration(seconds:1));
                              
                             if (username.isNotEmpty && password.isNotEmpty) {
                               
