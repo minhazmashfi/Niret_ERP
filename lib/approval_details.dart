@@ -165,17 +165,17 @@ class Approval_Details extends StatelessWidget {
                   ),
                   DottedLine(lineLength: double.infinity),
                   const SizedBox(height: 5,),
-                  Row(mainAxisAlignment: MainAxisAlignment.center,
+                  Row(mainAxisAlignment: MainAxisAlignment.end,
                   children: [Text('Total= ',style: GoogleFonts.bebasNeue(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),
             Text('800',style: GoogleFonts.bebasNeue(color: const Color.fromARGB(255, 228, 16, 16),fontSize: 14,fontWeight: FontWeight.bold),),
-            Text(' BDT',style: TextStyle(color: Color.fromARGB(255, 8, 8, 8),fontSize: 14),)
+            Text(' BDT',style: TextStyle(color: Color.fromARGB(255, 8, 8, 8),fontSize: 13),)
             ],),
                 ],
               ),
             ),
           ),
           const SizedBox(
-            height: 6,
+          height: 6,
           ),
           ElevatedButton(
               onPressed: () {},

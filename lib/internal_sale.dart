@@ -10,6 +10,8 @@ import 'package:niret_app/textField_sales.dart';
 import 'package:niret_app/sidebar.dart';
 
 class InternalState extends StatefulWidget {
+  final List<String> memo = ['Select a memo','maf/24/07/001', 'maf/24/07/002', 'maf/24/07/003'];
+
   @override
   State<InternalState> createState() {
     return _InternalState();
@@ -17,24 +19,30 @@ class InternalState extends StatefulWidget {
 }
 
 class _InternalState extends State<InternalState> {
-  var totalprice=0;
+  var totalprice = 0;
   var totalquan = 0;
   List<Map<String, Object>> itemInfo = [];
+  
+  String selectedMemo = 'Select a memo';
 
   void quantityIncrease(List addedItems) {
-    itemInfo.add({'itemName': addedItems[0], 'price': addedItems[1]});
+    itemInfo.add({
+      'itemName': addedItems[0],
+      'price': addedItems[1],
+      'size': addedItems[2]
+    });
 
     setState(() {
       totalquan++;
       print(itemInfo);
     });
   }
-  void totalpricecal(int price,String action){
-    if (action=='add'){
-    totalprice=totalprice+price;
-    }
-    else{
-      totalprice=totalprice-price;
+
+  void totalpricecal(int price, String action) {
+    if (action == 'add') {
+      totalprice = totalprice + price;
+    } else {
+      totalprice = totalprice - price;
       print(totalprice);
     }
   }
@@ -42,7 +50,7 @@ class _InternalState extends State<InternalState> {
   @override
   Widget build(context) {
     return Scaffold(
-      drawer: SideBar_IS(itemInfo,totalprice,totalpricecal),
+      drawer: SideBar_IS(itemInfo, totalprice, totalpricecal),
       appBar: AppBar(
         title: Text('Internal Sales',
             style: GoogleFonts.ubuntu(
@@ -56,42 +64,72 @@ class _InternalState extends State<InternalState> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CartPage(itemInfo,totalprice,totalpricecal),
+                      builder: (context) =>
+                          CartPage(itemInfo, totalprice, totalpricecal),
                     ));
               },
-              icon:  Image.asset('assets/images/cart.png'))
+              icon: Image.asset('assets/images/cart.png'))
         ],
       ),
       backgroundColor: Color.fromARGB(255, 254, 255, 253),
       body: SingleChildScrollView(
         child: Column(
-          
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 4,),
+            const SizedBox(
+              height: 4,
+            ),
             TextFieldSales('Name'),
             const SizedBox(height: 4),
             TextFieldSales('ID'),
-            const SizedBox(height: 150),
-            
+            const SizedBox(
+              height: 4,
+            ),
+            Container(
+              height: 40,
+              width: 600,
+              margin: EdgeInsets.only(left: 2,right:2),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 248, 237, 184),
+                border: Border.all(color: Colors.black)
+              ),
+              child: DropdownButton(
+                items: widget.memo.map(
+                  (String memo) {
+                    print(memo);
+                    return DropdownMenuItem(
+                      child: Text(memo),
+                      value: memo,
+                    );
+                  },
+                ).toList(),
+                onChanged: (String? newvalue) {
+                  setState(() {
+                    selectedMemo = newvalue!;
+                  });
+                },
+                value: selectedMemo,
+              ),
+            ),
+            const SizedBox(height: 100),
             Row(
               children: [
-              const  SizedBox(width: 4),
-              const  Expanded(
-                    child:  Text(
+                const SizedBox(width: 4),
+                const Expanded(
+                    child: Text(
                   'Item Name:',
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: Colors.pink),
                 )),
-              const  Expanded(
+                const Expanded(
                     child: Text('Price:',
                         style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: Colors.pink))),
-              const  Expanded(
+                const Expanded(
                     child: Text('Size:',
                         style: TextStyle(
                             fontSize: 12,
@@ -106,25 +144,31 @@ class _InternalState extends State<InternalState> {
               ],
             ),
             SizedBox(
-              height: 450,
+              height: 500,
               child: ListView(
                 children: [
-                  ShoeListTiles(
-                      'MDV 25 ', 200, quantityIncrease, totalquan,totalpricecal),
-                  ShoeListTiles(
-                      'MDV 26 ', 200, quantityIncrease, totalquan,totalpricecal),
-                  ShoeListTiles(
-                      'Run Shoes', 200, quantityIncrease, totalquan,totalpricecal),
-                  ShoeListTiles(
-                      'Fila 003 ', 300, quantityIncrease, totalquan,totalpricecal),
-                  ShoeListTiles(
-                      'Fila 004 ', 500, quantityIncrease, totalquan,totalpricecal),
-                  ShoeListTiles(
-                      'Easy KID 525 ', 200, quantityIncrease, totalquan,totalpricecal),
-                  ShoeListTiles(
-                      'MH 100 ', 200, quantityIncrease, totalquan,totalpricecal),
-                  ShoeListTiles(
-                      'MH 200 ', 800, quantityIncrease, totalquan,totalpricecal)
+                  ShoeListTiles('MDV 25 ', 200, quantityIncrease, totalquan,
+                      totalpricecal),
+                  ShoeListTiles('MDV 26 ', 200, quantityIncrease, totalquan,
+                      totalpricecal),
+                  ShoeListTiles('Run Shoes', 200, quantityIncrease, totalquan,
+                      totalpricecal),
+                  ShoeListTiles('Fila 003 ', 300, quantityIncrease, totalquan,
+                      totalpricecal),
+                  ShoeListTiles('Fila 004 ', 500, quantityIncrease, totalquan,
+                      totalpricecal),
+                  ShoeListTiles('Easy KID 525 ', 200, quantityIncrease,
+                      totalquan, totalpricecal),
+                  ShoeListTiles('MH 100 ', 200, quantityIncrease, totalquan,
+                      totalpricecal),
+                  ShoeListTiles('MH 200 ', 800, quantityIncrease, totalquan,
+                      totalpricecal),
+                  ShoeListTiles('MDV 26 ', 200, quantityIncrease, totalquan,
+                      totalpricecal),
+                  ShoeListTiles('Run Shoes', 200, quantityIncrease, totalquan,
+                      totalpricecal),
+                  ShoeListTiles('Fila 004 ', 500, quantityIncrease, totalquan,
+                      totalpricecal),
                 ],
               ),
             ),

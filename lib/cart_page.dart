@@ -60,16 +60,16 @@ class _CartPage extends State<CartPage> {
                                       child: Text(
                                         info['itemName'].toString(),
                                         style: GoogleFonts.ubuntuMono(
-                                            fontSize: 12,
+                                            fontSize: 13,
                                             fontWeight: FontWeight.bold,
                                             color: Color.fromARGB(255, 7, 1, 61)),
                                       ),
                                     ),
                                     Expanded(
                                       child: Text(
-                                        'N/A',
+                                        info['size'].toString(),
                                         style: GoogleFonts.ubuntuMono(
-                                            fontSize: 12,
+                                            fontSize: 13,
                                             fontWeight: FontWeight.bold,
                                             color: Color.fromARGB(255, 7, 1, 61)),
                                       ),
@@ -80,7 +80,7 @@ class _CartPage extends State<CartPage> {
                                       child: Text(
                                         info['price'].toString()+' BDT',
                                         style: GoogleFonts.ubuntuMono(
-                                            fontSize: 12,
+                                            fontSize: 13,
                                             fontWeight: FontWeight.bold,
                                             color: Color.fromARGB(255, 7, 1, 61)),
                                       ),
