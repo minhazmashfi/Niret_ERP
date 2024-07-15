@@ -24,6 +24,7 @@ class ShoeListTiles extends StatefulWidget {
     '43',
     '44'
   ];
+
 @override
 State<ShoeListTiles> createState() {
     return _ShoeListTiles();
@@ -117,7 +118,7 @@ class _ShoeListTiles extends State<ShoeListTiles> {
                         return PopupCard(
                       shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(30))),
                       elevation: 30,
-                      child: SizeChart(widget.labelText));
+                      child: SizeChart(widget.labelText,widget.sizeLists ));
                       });
                       
                      
