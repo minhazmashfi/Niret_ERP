@@ -50,7 +50,7 @@ class _ShoeListTiles extends State<ShoeListTiles> {
                 Column(
                   children: [
                     Row(
-                      
+                    
                       children:[ Expanded(
                         child: Text(
                           widget.labelText,
@@ -59,77 +59,56 @@ class _ShoeListTiles extends State<ShoeListTiles> {
                         ),
                       ),
                       
-                      
+                      const SizedBox(width: 20,),
                           Expanded(
                           
-                            child: Text(
-                              widget.price.toString()+' BDT',
-                              style: GoogleFonts.ubuntuMono(
-                                  fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 7, 1, 61)),
+                            child: Row(
+                              children: [
+                                Text(
+                                  widget.price.toString(),
+                                  style: GoogleFonts.ubuntuMono(
+                                      fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 41, 41)),
+                                ),
+                              Text(
+                                  ' BDT',
+                                  style: GoogleFonts.ubuntuMono(
+                                      fontSize: 14, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 8, 1, 1)),
+                                ),  
+                              ],
                             ),
                           ),
                     
-                         Expanded(
-                            child: Container(
-                              height: 40,
-                              
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 236, 217, 121),
-                                borderRadius: BorderRadius.all(Radius.circular(30))
-                              ),
-                              child:Center(
-                                child: DropdownButton(
-                                  menuMaxHeight: 120,
-                                  
-                                    items: widget.sizeLists.map((String size) {
-                                      return DropdownMenuItem(
-                                        
-                                        value:size,
-                                        child:Text(size) );
-                                    },
-                                    ).toList(),
-                                  
-                      
-                                    onChanged: (String? newvalue){
-                                      setState((){
-                                         dropdownvalue= newvalue!;
-                                      });
-                                    }
-                                      
-                                    ,
-                                    value: dropdownvalue ,
-                                  ),
-                                
-                              ) ,
-                            )
-                          ),
+                         
                     
                       const Spacer(),
-                      ElevatedButton(onPressed: (){
-                      widget.totalpricecal(widget.price,'add');
-                      List itemsummary=[];
-                      itemsummary.add(widget.labelText);
-                      itemsummary.add(widget.price);
-                      itemsummary.add(dropdownvalue);
-                      widget.quantityIncrease(itemsummary);
-                      //showDialog(context: context, builder:(context)=> const AlertDialog(content: Text('Successfully added to Cart'),alignment:Alignment.bottomCenter));
-                     showPopupCard(context: context,
-                      builder: (context){
-                        return PopupCard(
-                      shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(30))),
-                      elevation: 30,
-                      child: SizeChart(widget.labelText,widget.sizeLists ));
-                      });
-                      
-                     
-                      }, 
-                      
-                      
-                      
-                      style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255,81,160,94),foregroundColor: Colors.white,shape: RoundedRectangleBorder(),fixedSize: Size(70, 50)
-                      ),
-                      
-                      child: const Text('Add',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),))
+                      SizedBox(
+                        width: 100,
+                        child: ElevatedButton(onPressed: (){
+                        widget.totalpricecal(widget.price,'add');
+                        List itemsummary=[];
+                        itemsummary.add(widget.labelText);
+                        itemsummary.add(widget.price);
+                        itemsummary.add(dropdownvalue);
+                        widget.quantityIncrease(itemsummary);
+                        //showDialog(context: context, builder:(context)=> const AlertDialog(content: Text('Successfully added to Cart'),alignment:Alignment.bottomCenter));
+                                             showPopupCard(context: context,
+                        builder: (context){
+                          return PopupCard(
+                        shape: RoundedRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(30))),
+                        elevation: 30,
+                        child: SizeChart(widget.labelText,widget.sizeLists ));
+                        });
+                        
+                                             
+                        }, 
+                        
+                        
+                        
+                        style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255,81,160,94),foregroundColor: Colors.white,shape: RoundedRectangleBorder(),fixedSize: Size(70, 50)
+                        ),
+                        
+                        child:  const Text('Size Details',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),textAlign:TextAlign.center,)),
+                      )
                       ]
                     ),
               

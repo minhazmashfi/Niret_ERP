@@ -111,38 +111,8 @@ class _InternalState extends State<InternalState> {
                 value: selectedMemo,
               ),
             ),
-            const SizedBox(height: 100),
-            Row(
-              children: [
-                const SizedBox(width: 4),
-                const Expanded(
-                    child: Text(
-                  'Item Name:',
-                  style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.pink),
-                )),
-                const Expanded(
-                    child: Text('Price:',
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.pink))),
-                const Expanded(
-                    child: Text('Size:',
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.pink))),
-                Expanded(
-                    child: Text('Total quantity:$totalquan',
-                        style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 7, 99, 236))))
-              ],
-            ),
+            const SizedBox(height: 120),
+          
             SizedBox(
               height: 500,
               child: ListView(
